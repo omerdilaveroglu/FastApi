@@ -54,7 +54,7 @@ async def read_own_items(
     return get_all_users()
 
 @app.post("/users/create_user",dependencies=[Depends(api_key_middleware)],tags=['Login'])
-def user_added(createUser:CreateUser):
+async def user_added(createUser:CreateUser):
     return user_register(createUser.first_name,createUser.last_name,createUser.email,createUser.sex,createUser.passrowd)
 
 if __name__ == "__main__":
