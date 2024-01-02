@@ -48,7 +48,7 @@ async def read_own_items(
 
 # GET metodu ile datatable dönen endpoint
 @app.get("/users/me/GetAllUsers",response_model=List[User],tags=["UserOperations"])
-async def read_own_items(
+async def get_all_user_items(
     current_user: Annotated[User, Depends(get_current_active_user)]
 ):
     return get_all_users()
